@@ -18,6 +18,9 @@ public class CalculatorService implements ICalculator {
     }
 
     public double divide(double num1, double num2) {
+        if (num2 == 0) {
+            throw new ArithmeticException("Недопустимая операция. Попытка деления на ноль");
+        }
         return num1 / num2;
     }
 }

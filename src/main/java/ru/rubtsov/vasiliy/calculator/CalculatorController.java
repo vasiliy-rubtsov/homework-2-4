@@ -28,11 +28,9 @@ public class CalculatorController {
 
     @GetMapping(path="plus")
     public String plus(
-            @RequestParam(name = "num1", required = false)
-            @NotEmpty(message="Параметр num1 обязателен")
+            @RequestParam("num1")
             String num1,
-            @RequestParam(name = "num2", required = false)
-            @NotEmpty(message="Параметр num2 обязателен")
+            @RequestParam("num2")
             String num2
     ) {
         return String.format("%s", this.service.plus(Double.parseDouble(num1), Double.parseDouble(num2)));
@@ -40,11 +38,9 @@ public class CalculatorController {
 
     @GetMapping(path="minus")
     public String minus(
-            @RequestParam(name = "num1", required = false)
-            @NotEmpty(message="Параметр num1 обязателен")
+            @RequestParam("num1")
             String num1,
-            @RequestParam(name = "num2", required = false)
-            @NotEmpty(message="Параметр num2 обязателен")
+            @RequestParam("num2")
             String num2
     ) {
         return String.format("%s", this.service.minus(Double.parseDouble(num1), Double.parseDouble(num2)));
@@ -52,11 +48,9 @@ public class CalculatorController {
 
     @GetMapping(path="multiply")
     public String multiply(
-            @RequestParam(name = "num1", required = false)
-            @NotEmpty(message="Параметр num1 обязателен")
+            @RequestParam("num1")
             String num1,
-            @RequestParam(name = "num2", required = false)
-            @NotEmpty(message="Параметр num2 обязателен")
+            @RequestParam("num2")
             String num2
     ) {
         return String.format("%s", this.service.multiply(Double.parseDouble(num1), Double.parseDouble(num2)));
@@ -64,16 +58,11 @@ public class CalculatorController {
 
     @GetMapping(path="divide")
     public String divide(
-            @RequestParam(name = "num1", required = false)
-            @NotEmpty(message="Параметр num1 обязателен")
+            @RequestParam("num1")
             String num1,
-            @RequestParam(name = "num2", required = false)
-            @NotEmpty(message="Параметр num2 обязателен")
+            @RequestParam("num2")
             String num2
     ) {
-        if (Double.parseDouble(num1) == 0) {
-            return "Недопустимая операция: Деление на ноль";
-        }
         return String.format("%s", this.service.divide(Double.parseDouble(num1), Double.parseDouble(num2)));
     }
 }
