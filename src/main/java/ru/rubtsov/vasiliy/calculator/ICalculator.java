@@ -1,6 +1,6 @@
 package ru.rubtsov.vasiliy.calculator;
 
-public interface Calculator {
+public interface ICalculator {
     double plus(double num1, double num2);
 
     double minus(double num1, double num2);

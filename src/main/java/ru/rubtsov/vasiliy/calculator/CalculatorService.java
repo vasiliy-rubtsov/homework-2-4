@@ -1,6 +1,9 @@
 package ru.rubtsov.vasiliy.calculator;
 
-public class CalculatorService implements Calculator {
+import org.springframework.stereotype.Service;
+
+@Service
+public class CalculatorService implements ICalculator {
 
     public double plus(double num1, double num2) {
         return num1 + num2;
